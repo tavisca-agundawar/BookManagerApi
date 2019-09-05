@@ -1,0 +1,14 @@
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\bin\Debug\netcoreapp2.2\WebApiTraining.deps.json
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\bin\Debug\netcoreapp2.2\WebApiTraining.runtimeconfig.json
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\bin\Debug\netcoreapp2.2\WebApiTraining.runtimeconfig.dev.json
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\bin\Debug\netcoreapp2.2\WebApiTraining.dll
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\bin\Debug\netcoreapp2.2\WebApiTraining.pdb
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.csprojAssemblyReference.cache
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.csproj.CoreCompileInputs.cache
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.RazorAssemblyInfo.cache
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.RazorAssemblyInfo.cs
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.AssemblyInfoInputs.cache
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.AssemblyInfo.cs
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.RazorTargetAssemblyInfo.cache
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.dll
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.pdb
