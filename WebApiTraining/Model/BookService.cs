@@ -8,7 +8,7 @@ namespace WebApiTraining.Model
     public class BookService
     {
         private static readonly BookData _bookData = new BookData();
-        private List<ErrorModel> _errors = new List<ErrorModel>();
+        private readonly List<ErrorModel> _errors = new List<ErrorModel>();
 
        
         public BookResponseModel GetBooks()
@@ -20,7 +20,7 @@ namespace WebApiTraining.Model
                 return new BookResponseModel(Books, null);
             }
             else
-                return new BookResponseModel(null, new ErrorModel(404, ErrorMessage.BookNotFound));
+                return new BookResponseModel(null, new ErrorModel(101, ErrorMessage.BookNotFound));
         }
 
         public BookResponseModel GetBookById(int id)
@@ -28,7 +28,7 @@ namespace WebApiTraining.Model
             _errors.Clear();
             if (!Validate.IsPositiveInt(id))
             {
-                return new BookResponseModel(null, new List<ErrorModel>() { new ErrorModel(100, ErrorMessage.InvalidId) });
+                return new BookResponseModel(null, new List<ErrorModel>() { new ErrorModel(102, ErrorMessage.InvalidId) });
             }
 
             Book foundBook = _bookData.GetBookById(id);
@@ -97,7 +97,7 @@ namespace WebApiTraining.Model
             }
             if (book.Author != null)
             {
-                if (Validate.ContainsNumbers(book.Author) && Validate.IsBlankOrWhiteSpace(book.Author))
+                if (Validate.ContainsNumbers(book.Author) || Validate.IsBlankOrWhiteSpace(book.Author))
                 {
                     _errors.Add(new ErrorModel(104,ErrorMessage.AuthorNameViolation));
                     valid = false;
@@ -106,7 +106,7 @@ namespace WebApiTraining.Model
 
             if (book.Category != null)
             {
-                if (Validate.ContainsNumbers(book.Category) && Validate.IsBlankOrWhiteSpace(book.Category))
+                if (Validate.ContainsNumbers(book.Category) || Validate.IsBlankOrWhiteSpace(book.Category))
                 {
                     _errors.Add(new ErrorModel(105, ErrorMessage.CategoryNameViolation));
                     valid = false;

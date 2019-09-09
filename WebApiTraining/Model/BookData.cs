@@ -59,7 +59,6 @@ namespace WebApiTraining.Model
                 book.Price = updateBook.Price;
         }
 
-
         internal bool DeleteBookById(int id)
         { 
             return _books.Remove(GetBookById(id));

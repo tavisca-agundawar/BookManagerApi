@@ -9,6 +9,7 @@ namespace WebApiTraining.Model
         {
             return value == null || value.All(char.IsWhiteSpace) || value == "";
         }
+
         public static bool IsPositiveInt<T>(T value)
         {
             if (IsInt(value))
