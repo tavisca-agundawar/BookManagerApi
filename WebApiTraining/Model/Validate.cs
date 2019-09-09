@@ -5,6 +5,10 @@ namespace WebApiTraining.Model
 {
     public class Validate
     {
+        public static bool IsBlankOrWhiteSpace(string value)
+        {
+            return value == null || value.All(char.IsWhiteSpace) || value == "";
+        }
         public static bool IsPositiveInt<T>(T value)
         {
             if (IsInt(value))

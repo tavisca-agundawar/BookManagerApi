@@ -18,37 +18,71 @@ namespace WebApiTraining.Controllers
 
         // GET: api/Book
         [HttpGet]
-        public IEnumerable<Book> Get()
+        public ActionResult<IEnumerable<Book>> Get()
         {
-            return _bookService.GetBooks();
+            return Ok(_bookService.GetBooks().Books);
         }
 
         // GET: api/Book/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public ActionResult<Book> Get(int id)
         {
-            return _bookService.GetBookById(id);
+            var result = _bookService.GetBookById(id);
+            if (result.Errors != null)
+            {
+                return BadRequest(result.Errors);
+            }
+            else
+            {
+                return Ok(result.Book);
+            }
+            
         }
 
         // POST: api/Book
         [HttpPost]
-        public string Post([FromBody] Book newBook)
+        public ActionResult<Book> Post([FromBody] Book newBook)
         {
-            return _bookService.AddBook(newBook);
+            var result = _bookService.AddBook(newBook);
+            if (result.Errors != null)
+            {
+                return BadRequest(result.Errors);
+            }
+            else
+            {
+                return Ok(result.Book);
+            }
         }
 
         // PUT: api/Book/5
         [HttpPut("{id}")]
-        public string Put(int id, [FromBody] Book updateBook)
+        public ActionResult<Book> Put(int id, [FromBody] Book updateBook)
         {
-            return _bookService.UpdateBookDetails(id, updateBook);
+            var response = _bookService.UpdateBookDetails(id, updateBook);
+
+            if (response.Errors != null)
+            {
+                return BadRequest(response.Errors);
+            }
+            else
+            {
+                return Ok(response.Book);
+            }
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/Book/5
         [HttpDelete("{id}")]
-        public string Delete(int id)
+        public ActionResult Delete(int id)
         {
-            return _bookService.DeleteBookById(id).ToString();
+            if (_bookService.DeleteBookById(id))
+            {
+                return Ok("Deleted Successfully!");
+            }
+            else
+            {
+                return StatusCode(500,"Id not found!");
+            }
+            
         }
     }
 }

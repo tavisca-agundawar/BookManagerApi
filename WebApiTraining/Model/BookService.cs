@@ -8,60 +8,118 @@ namespace WebApiTraining.Model
     public class BookService
     {
         private static readonly BookData _bookData = new BookData();
+        private List<ErrorModel> _errors = new List<ErrorModel>();
 
-        public IEnumerable<Book> GetBooks()
+       
+        public BookResponseModel GetBooks()
         {
-            return _bookData.GetBooks();
+            _errors.Clear();
+            var Books = _bookData.GetBooks();
+            if (Books != null)
+            {
+                return new BookResponseModel(Books, null);
+            }
+            else
+                return new BookResponseModel(null, new ErrorModel(404, ErrorMessage.BookNotFound));
         }
 
-        public string GetBookById(int id)
+        public BookResponseModel GetBookById(int id)
         {
+            _errors.Clear();
             if (!Validate.IsPositiveInt(id))
             {
-                return ErrorMessage.InvalidId;
+                return new BookResponseModel(null, new List<ErrorModel>() { new ErrorModel(100, ErrorMessage.InvalidId) });
             }
 
             Book foundBook = _bookData.GetBookById(id);
 
+
             if (foundBook != null)
             {
-                return $"Title: {foundBook.Title}\nAuthor: {foundBook.Author}\nCategory: {foundBook.Category}\nPrice: {foundBook.Price}\nId:{foundBook.Id}";
+                return new BookResponseModel(foundBook, null);
             }
-            return ErrorMessage.BookNotFound;
+            return new BookResponseModel(null, new List<ErrorModel>() { new ErrorModel(101, ErrorMessage.BookNotFound) });
         }
 
-        public string AddBook(Book newBook)
+        public BookResponseModel AddBook(Book newBook)
         {
-            try
+            _errors.Clear();
+            if (ValidateBookDetails(newBook) && !(newBook.Title == null))
             {
-                if(_bookData.AddBook(newBook,out string result))
+                _bookData.AddBook(newBook);
+                return new BookResponseModel(GetBookById(newBook.Id).Book,null);
+            }
+            else
+            {
+                if (newBook.Title == null)
                 {
-                    return result + GetBookById(newBook.Id);
+                    _errors.Add(new ErrorModel(103, ErrorMessage.MissingTitle));
+                }
+                return new BookResponseModel(null, _errors);
+            }
+        }
+
+        public BookResponseModel UpdateBookDetails(int id, Book updateBook)
+        {
+            _errors.Clear();
+            if (GetBookById(id).Book != null)
+            {
+                if (ValidateBookDetails(updateBook))
+                {
+                    _bookData.UpdateBookDetails(id, updateBook);
+                    return new BookResponseModel(GetBookById(id).Book, null);
                 }
                 else
-                {
-                    return result;
-                }
-                
+                    return new BookResponseModel(null, _errors);
             }
-            catch (Exception)
-            {
-                return ErrorMessage.Unknown;
-            }
-        }
-
-        public string UpdateBookDetails(int id, Book updateBook)
-        {
-            if (_bookData.UpdateBookDetails(id, updateBook, out string result))
-                return result + GetBookById(id);
             else
-                return result;
+            {
+                return new BookResponseModel(null, new ErrorModel(101, ErrorMessage.BookNotFound));
+            }
         }
 
         public bool DeleteBookById(int id)
         {
-            _bookData.DeleteBookById(id, out bool response);
-            return response;
+            return _bookData.DeleteBookById(id);
+        }
+
+        private bool ValidateBookDetails(Book book)
+        {
+            bool valid = true;
+
+            if (book.Title!=null)
+            {
+                if (Validate.IsBlankOrWhiteSpace(book.Title))
+                {
+                    _errors.Add(new ErrorModel(103, ErrorMessage.MissingTitle));
+                    valid = false;
+                }
+            }
+            if (book.Author != null)
+            {
+                if (Validate.ContainsNumbers(book.Author) && Validate.IsBlankOrWhiteSpace(book.Author))
+                {
+                    _errors.Add(new ErrorModel(104,ErrorMessage.AuthorNameViolation));
+                    valid = false;
+                }
+            }
+
+            if (book.Category != null)
+            {
+                if (Validate.ContainsNumbers(book.Category) && Validate.IsBlankOrWhiteSpace(book.Category))
+                {
+                    _errors.Add(new ErrorModel(105, ErrorMessage.CategoryNameViolation));
+                    valid = false;
+                }
+            }
+
+            if (!Validate.IsPositiveInt(book.Price))
+            {
+                _errors.Add(new ErrorModel(106, ErrorMessage.InvalidPrice));
+                valid = false;
+            }
+
+            return valid;
         }
     }
 }

@@ -9,7 +9,6 @@ namespace WebApiTraining.Model
     {
         private static readonly List<Book> _books = new List<Book>();
         private static int _idCounter = 0;
-        //private static int _untitledCounter = 0;
         private const int _defaultMinimumPrice = 200;
 
         public BookData()
@@ -27,131 +26,47 @@ namespace WebApiTraining.Model
             return _books;
         }
 
-        public bool AddBook(Book newBook, out string result)
+        public bool AddBook(Book newBook)
         {
-            bool valid = ValidateTitle(newBook, out string validationResult);
-            if (!valid)
-            {
-                result = validationResult;
-                return false;
-            }
-
-            valid = ValidateBookDetails(newBook, out validationResult);
-
-            if (!valid)
-            {
-                result = validationResult;
-                return false;
-            }
-
-            newBook = AddMissingBookDetails(newBook);
-            result = "Succesfully added:\n";
-
+            
             if (newBook != null)
             {
+                newBook = AddMissingBookDetails(newBook);
                 _books.Add(newBook);
                 return true;
             }
             else
             {
-                result = "No book entered";
                 return false;
             }
                             
         }
 
-        private bool ValidateTitle(Book book, out string validationResult)
-        {
-            validationResult = "";
-            if (book.Title == null || book.Title.All(char.IsWhiteSpace) || book.Title == "")
-            {
-                validationResult = ErrorMessage.MissingTitle;
-                return false;
-            }
-            else
-                return true;
-        }
-
-        internal bool UpdateBookDetails(int id, Book updateBook, out string result)
+        internal void UpdateBookDetails(int id, Book updateBook)
         {
             var book = GetBookById(id);
-            bool valid = ValidateBookDetails(updateBook, out string validationResult);
 
-            if (!valid)
-            {
-                result = validationResult;
-                return false;
-            }
+            if (updateBook.Title != null)
+                book.Title = updateBook.Title;
 
-            if (book != null)
-            {
-                if (updateBook.Title != null)
-                    book.Title = updateBook.Title;
+            if (updateBook.Category != null)
+                book.Category = updateBook.Category;
 
-                if (updateBook.Category != null)
-                    book.Category = updateBook.Category;
-
-                if (updateBook.Author != null)
-                    book.Author = updateBook.Author;
+            if (updateBook.Author != null)
+                book.Author = updateBook.Author;
                     
-                if(updateBook.Price > 0)
-                    book.Price = updateBook.Price;
-
-                result = "Book updated successfully:\n";
-                if (updateBook.Id != book.Id && updateBook.Id != 0)
-                    result += "Id is auto assigned and cannot be updated.\n";
-                return true;
-            }
-            else
-            {
-                result = ErrorMessage.BookNotFound;
-                return false;
-            }
-                
+            if(updateBook.Price > 0)
+                book.Price = updateBook.Price;
         }
 
-        private bool ValidateBookDetails(Book book, out string validationResult)
-        {
-            validationResult = "";
 
-            if (book.Author != null)
-            {
-                if (Validate.ContainsNumbers(book.Author))
-                {
-                    validationResult = ErrorMessage.AuthorNameViolation;
-                    return false;
-                }
-            }
-
-            if (book.Category != null)
-            {
-                if (Validate.ContainsNumbers(book.Category))
-                {
-                    validationResult = ErrorMessage.CategoryNameViolation;
-                    return false;
-                }
-            }
-
-            if (!Validate.IsPositiveInt(book.Price))
-            {
-                validationResult = ErrorMessage.InvalidPrice;
-                return false;
-            }
-
-            return true;
-        }
-
-        internal void DeleteBookById(int id, out bool response)
-        {
-
-            response =_books.Remove(GetBookById(id));
+        internal bool DeleteBookById(int id)
+        { 
+            return _books.Remove(GetBookById(id));
         }
 
         private Book AddMissingBookDetails(Book newBook)
         {
-            //if(newBook.Title == null)
-            //    newBook.Title = "Untitled Book " + ++_untitledCounter;
-
             if (newBook.Author == null)
                 newBook.Author = "Unknown Author";
 
@@ -164,7 +79,6 @@ namespace WebApiTraining.Model
             newBook.Id = ++_idCounter;
 
             return newBook;
-
         }
 
         public Book GetBookById(int id)

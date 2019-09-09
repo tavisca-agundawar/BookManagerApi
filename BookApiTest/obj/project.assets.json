@@ -2641,7 +2641,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "FluentAssertions": "5.9.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3"
         },
         "compile": {
