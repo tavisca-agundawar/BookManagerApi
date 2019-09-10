@@ -18,25 +18,25 @@ namespace WebApiTraining.Controllers
         }
 
         // GET: api/Book/5
-        [HttpGet("{id}", Name = "Get")]
-        public ActionResult<Book> Get(int id)
-        {
-            var result = _bookService.GetBookById(id);
-            if (result.Errors != null)
-            {
-                return BadRequest(result.Errors);
-            }
-            else
-            {
-                return Ok(result.Book);
-            }
-            
-        }
+        //[HttpGet("{id}", Name = "Get")]
+        //public ActionResult<Book> Get(int id)
+        //{
+        //    var result = _bookService.GetBookById(id);
+        //    if (result.Errors != null)
+        //    {
+        //        return BadRequest(result.Errors);
+        //    }
+        //    else
+        //    {
+        //        return Ok(result.Book);
+        //    }
+        //}
 
-        [HttpGet("{name}", Name = "Get")]
-        public ActionResult<Book> Get(string name)
+        // GET: api/Book/{title}
+        [HttpGet("{title}", Name = "Get")]
+        public ActionResult<Book> Get(string title)
         {
-            var result = _bookService.GetBookByTitle(name);
+            var result = _bookService.GetBookByTitle(title);
             if (result.Errors != null)
             {
                 return BadRequest(result.Errors);

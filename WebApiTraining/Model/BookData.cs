@@ -60,7 +60,7 @@ namespace WebApiTraining.Model
 
         internal Book GetBookByTitle(string title)
         {
-            return _books.Find(book => book.Title == title);
+            return _books.Find(book => book.Title.StartsWith(title));
         }
 
         internal bool DeleteBookById(int id)
