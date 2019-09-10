@@ -1834,7 +1834,6 @@
       },
       "WebApiTraining/1.0.0": {
         "dependencies": {
-          "FluentAssertions": "5.9.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3"
         },
         "runtime": {

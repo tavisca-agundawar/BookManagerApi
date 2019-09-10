@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using WebApiTraining.Model;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace WebApiTraining.Controllers
 {
@@ -14,7 +8,7 @@ namespace WebApiTraining.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private static BookService _bookService = new BookService();
+        private BookService _bookService = new BookService();
 
         // GET: api/Book
         [HttpGet]
