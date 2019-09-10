@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace WebApiTraining.Model
 {
@@ -32,6 +33,20 @@ namespace WebApiTraining.Model
 
 
             if (foundBook != null)
+            {
+                return new BookResponseModel(foundBook, null);
+            }
+            return new BookResponseModel(null, new List<ErrorModel>() { new ErrorModel(101, ErrorMessage.BookNotFound) });
+        }
+
+        public BookResponseModel GetBookByTitle(string title)
+        {
+            if (title.IsBlankOrWhiteSpace())
+            {
+                return new BookResponseModel(null, new ErrorModel(103, ErrorMessage.MissingTitle));
+            }
+            Book foundBook = _bookData.GetBookByTitle(title);
+            if(foundBook != null)
             {
                 return new BookResponseModel(foundBook, null);
             }

@@ -33,6 +33,20 @@ namespace WebApiTraining.Controllers
             
         }
 
+        [HttpGet("{name}", Name = "Get")]
+        public ActionResult<Book> Get(string name)
+        {
+            var result = _bookService.GetBookByTitle(name);
+            if (result.Errors != null)
+            {
+                return BadRequest(result.Errors);
+            }
+            else
+            {
+                return Ok(result.Book);
+            }
+        }
+
         // POST: api/Book
         [HttpPost]
         public ActionResult<Book> Post([FromBody] Book newBook)

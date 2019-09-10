@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace WebApiTraining.Model
 {
-    public class Validate
+    public static class Validate
     {
-        public static bool IsBlankOrWhiteSpace(string value)
+        public static bool IsBlankOrWhiteSpace(this string value)
         {
             return value == null || value.All(char.IsWhiteSpace) || value == "";
         }
@@ -30,7 +30,7 @@ namespace WebApiTraining.Model
             return value.GetType() == typeof(int);
         }
 
-        public static bool ContainsNumbers(string value)
+        public static bool ContainsNumbers(this string value)
         {
             return value.Any(char.IsDigit);
         }

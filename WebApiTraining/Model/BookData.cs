@@ -1,4 +1,5 @@
 ﻿#define MyDebug
+using System;
 using System.Collections.Generic;
 
 namespace WebApiTraining.Model
@@ -55,6 +56,11 @@ namespace WebApiTraining.Model
                     
             if(updateBook.Price > 0)
                 book.Price = updateBook.Price;
+        }
+
+        internal Book GetBookByTitle(string title)
+        {
+            return _books.Find(book => book.Title == title);
         }
 
         internal bool DeleteBookById(int id)
