@@ -61,7 +61,7 @@ namespace WebApiTraining.Controllers
                 return Ok(result.Book);
             }
         }
-
+        
         // PUT: api/Book/5
         [HttpPut("{id}")]
         public ActionResult<Book> Put(int id, [FromBody] Book updateBook)

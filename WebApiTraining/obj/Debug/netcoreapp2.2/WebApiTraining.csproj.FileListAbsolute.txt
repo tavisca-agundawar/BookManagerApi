@@ -12,3 +12,4 @@ C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcorea
 C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.RazorTargetAssemblyInfo.cache
 C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.dll
 C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\obj\Debug\netcoreapp2.2\WebApiTraining.pdb
+C:\Users\agundawar\source\repos\WebApiTraining\WebApiTraining\bin\Debug\netcoreapp2.2\log4net.config
