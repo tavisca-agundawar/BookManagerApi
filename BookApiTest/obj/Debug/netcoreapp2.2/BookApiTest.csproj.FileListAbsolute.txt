@@ -1,0 +1,17 @@
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\BookApiTest.deps.json
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\BookApiTest.runtimeconfig.json
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\BookApiTest.runtimeconfig.dev.json
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\BookApiTest.dll
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\WebApiTraining.dll
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\WebApiTraining.pdb
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\obj\Debug\netcoreapp2.2\BookApiTest.csprojAssemblyReference.cache
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\obj\Debug\netcoreapp2.2\BookApiTest.csproj.CoreCompileInputs.cache
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\obj\Debug\netcoreapp2.2\BookApiTest.AssemblyInfoInputs.cache
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\obj\Debug\netcoreapp2.2\BookApiTest.AssemblyInfo.cs
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\obj\Debug\netcoreapp2.2\BookApiTest.csproj.CopyComplete
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\bin\Debug\netcoreapp2.2\BookApiTest.pdb
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\obj\Debug\netcoreapp2.2\BookApiTest.dll
+C:\Users\agundawar\source\repos\WebApiTraining\BookApiTest\obj\Debug\netcoreapp2.2\BookApiTest.pdb

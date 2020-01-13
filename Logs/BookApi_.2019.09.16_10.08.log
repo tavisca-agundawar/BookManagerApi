@@ -1,0 +1,30 @@
+2019-09-16 10:08:07,892 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/api/book/Wave  
+2019-09-16 10:08:07,908 [16] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApiTraining.Controllers.BookController.Get (WebApiTraining)'
+2019-09-16 10:08:07,909 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[WebApiTraining.Model.Book] Get(System.String) on controller WebApiTraining.Controllers.BookController (WebApiTraining).
+2019-09-16 10:08:07,911 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApiTraining.Controllers.BookController.Get (WebApiTraining) - Validation state: Valid
+2019-09-16 10:08:07,914 [16] ERROR WebApiTraining.Model.BookService - Book not found
+2019-09-16 10:08:07,917 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApiTraining.Controllers.BookController.Get (WebApiTraining), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 2.5211ms.
+2019-09-16 10:08:07,918 [16] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApiTraining.Model.ErrorModel, WebApiTraining, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-16 10:08:07,921 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApiTraining.Controllers.BookController.Get (WebApiTraining) in 9.3239ms
+2019-09-16 10:08:07,922 [16] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApiTraining.Controllers.BookController.Get (WebApiTraining)'
+2019-09-16 10:08:07,924 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 32.8626ms 400 application/json; charset=utf-8
+2019-09-16 10:08:17,158 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/api/book/The BFG  
+2019-09-16 10:08:17,160 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApiTraining.Controllers.BookController.Get (WebApiTraining)'
+2019-09-16 10:08:17,163 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[WebApiTraining.Model.Book] Get(System.String) on controller WebApiTraining.Controllers.BookController (WebApiTraining).
+2019-09-16 10:08:17,165 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApiTraining.Controllers.BookController.Get (WebApiTraining) - Validation state: Valid
+2019-09-16 10:08:17,167 [6] DEBUG WebApiTraining.Model.BookService - Book found
+2019-09-16 10:08:17,170 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApiTraining.Controllers.BookController.Get (WebApiTraining), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.4146ms.
+2019-09-16 10:08:17,172 [6] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'WebApiTraining.Model.Book'.
+2019-09-16 10:08:17,174 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApiTraining.Controllers.BookController.Get (WebApiTraining) in 9.0021ms
+2019-09-16 10:08:17,175 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApiTraining.Controllers.BookController.Get (WebApiTraining)'
+2019-09-16 10:08:17,178 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.5297ms 200 application/json; charset=utf-8
+2019-09-16 10:08:30,081 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/api/book/  
+2019-09-16 10:08:30,084 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApiTraining.Controllers.BookController.Get (WebApiTraining)'
+2019-09-16 10:08:30,087 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[WebApiTraining.Model.Book]] Get() on controller WebApiTraining.Controllers.BookController (WebApiTraining).
+2019-09-16 10:08:30,088 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApiTraining.Controllers.BookController.Get (WebApiTraining) - Validation state: Valid
+2019-09-16 10:08:30,090 [6] DEBUG WebApiTraining.Model.BookService - Returned book list
+2019-09-16 10:08:30,092 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApiTraining.Controllers.BookController.Get (WebApiTraining), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.7131ms.
+2019-09-16 10:08:30,093 [6] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApiTraining.Model.Book, WebApiTraining, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-16 10:08:30,095 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApiTraining.Controllers.BookController.Get (WebApiTraining) in 6.8629ms
+2019-09-16 10:08:30,097 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApiTraining.Controllers.BookController.Get (WebApiTraining)'
+2019-09-16 10:08:30,107 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 25.6739ms 200 application/json; charset=utf-8

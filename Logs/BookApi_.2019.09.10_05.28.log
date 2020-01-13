@@ -1,0 +1,11 @@
+2019-09-10 17:28:25,126 [1] INFO Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\agundawar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-09-10 17:28:26,224 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/2.0 GET https://localhost:44362/api/book  
+2019-09-10 17:28:26,286 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApiTraining.Controllers.BookController.Get (WebApiTraining)'
+2019-09-10 17:28:26,319 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[WebApiTraining.Model.Book]] Get() on controller WebApiTraining.Controllers.BookController (WebApiTraining).
+2019-09-10 17:28:26,335 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApiTraining.Controllers.BookController.Get (WebApiTraining) - Validation state: Valid
+2019-09-10 17:28:26,340 [6] DEBUG WebApiTraining.Model.BookService - Returned book list
+2019-09-10 17:28:26,353 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApiTraining.Controllers.BookController.Get (WebApiTraining), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 11.2096ms.
+2019-09-10 17:28:26,369 [6] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApiTraining.Model.Book, WebApiTraining, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-10 17:28:26,518 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApiTraining.Controllers.BookController.Get (WebApiTraining) in 192.8623ms
+2019-09-10 17:28:26,524 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApiTraining.Controllers.BookController.Get (WebApiTraining)'
+2019-09-10 17:28:26,534 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 311.2884ms 200 application/json; charset=utf-8
